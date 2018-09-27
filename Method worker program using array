@@ -1,0 +1,78 @@
+package test;
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        Worker obj=new Worker();
+        System.out.println("====================================================");
+        for(int x=0;x<5;x++)
+        {
+            obj.setLoc(x);
+            System.out.println("please enter employye id at:"+x);
+            obj.setId(scanner.nextInt());
+            System.out.println("please enter employye name at:"+x);
+            obj.setName(scanner.next());
+            System.out.println("please enter employye salary at:"+x);
+            obj.setSal(scanner.nextInt());
+            System.out.println("====================================================");
+        }
+        System.out.println("Displaying employee data");
+        System.out.println("====================================================");
+        for(int x=0;x<5;x++)
+        {
+            obj.setLoc(x);
+            System.out.println("Employee Id:"+obj.getId());
+            System.out.println("employye name:"+obj.getName());
+            System.out.println("employye full salary:"+obj.getSal());
+            System.out.println("employye actual salary:"+obj.Sala());
+            System.out.println("====================================================");
+        }
+        
+    }
+
+}
+-----------------------------------------------
+package test;
+
+public class Worker {
+private String name[]=new String[5];
+private int id[]=new int[5];
+private int sal[]=new int[5];
+int x=0;
+public String getName()
+{
+    return name[x];
+    }
+public int getId()
+{
+    return id[x];
+    }
+public int getSal()
+{
+    return sal[x];
+    }
+public void setLoc(int y)
+{
+    x=((5>y)&&(y>=0))? y:0;
+    }
+public void setName(String p)
+{
+    name[x]=p;
+            }
+public void setId(int q)
+{
+
+    id[x]=q;
+    }
+public void setSal(int r)
+{
+    sal[x]=r;
+    }
+public double Sala()
+{
+    return (sal[x]-(sal[x]*0.125));
+            }
+}
+
